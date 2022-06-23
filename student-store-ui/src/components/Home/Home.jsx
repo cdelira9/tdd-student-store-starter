@@ -5,13 +5,13 @@ import ProductGrid from "../ProductGrid/ProductGrid";
 import "./Home.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-export default function Home() {
+export default function Home({ products }) {
   return (
     <div className="home">
       <Navbar />
       <Sidebar />
       <p>Home</p>
-      <ProductGrid />
+      <ProductGrid products={products} />
     </div>
   );
 }
