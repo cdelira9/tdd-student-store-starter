@@ -28,7 +28,6 @@ export default function ProductDetail({ shoppingCart }) {
   );
 
   console.log("isLoading or Success?: ", element);
-
   useEffect(async () => {
     console.log("UserId got from params: ", productId);
 
@@ -47,9 +46,9 @@ export default function ProductDetail({ shoppingCart }) {
 
   return (
     <div className="productdetail">
-      {element}
       <Navbar />
       <Sidebar />
+      <div className="box">{element}</div>
       {/* <ProductView product={product} productId={productId} /> */}
     </div>
   );
