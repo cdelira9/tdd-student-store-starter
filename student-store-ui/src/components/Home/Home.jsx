@@ -9,8 +9,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 export default function Home(props) {
   return (
     <div className="home">
-      <Navbar />
-      <Sidebar />
       <Hero />
       <ProductGrid products={props.products} />
       <div className="about">

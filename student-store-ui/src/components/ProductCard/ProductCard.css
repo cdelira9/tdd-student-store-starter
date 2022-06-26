@@ -1,11 +1,9 @@
 img {
-  width: 200px;
+  width: 248px;
+  height:250px;
 }
 
 .info {
   width: 250px;
-  border: 1px solid black;
-  padding: 50px;
-  margin: 20px;
-  align-items: center;
+  border: 1px solid lightgray;
 }

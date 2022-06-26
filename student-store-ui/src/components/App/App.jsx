@@ -12,7 +12,9 @@ import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 export default function App() {
+  const [isOpen, setIsOpen] = useState(false);
   const [products, setProducts] = useState([]);
+  const [ShoppingCart, setShoppingCart] = useState([]);
   useEffect(() => {
     async function getProducts() {
       try {
@@ -30,19 +32,24 @@ export default function App() {
     getProducts();
   }, []);
 
+  const handleOnToggle = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
     <div className="app">
       <BrowserRouter>
+        <Navbar />
+        <Sidebar
+          handleOnToggle={handleOnToggle}
+          isOpen={isOpen}
+          products={products}
+        />
         <main>
           <Routes>
             <Route path="/" element={<Home products={products} />} />
-            <Route
-              path="/products/:productId"
-              element={<ProductDetail />}
-            />
+            <Route path="/products/:productId" element={<ProductDetail />} />
             <Route path="*" element={<NotFound />} />
-            <Route path="navbar" element={<Navbar />} />
-            <Route path="sidebar" element={<Sidebar />} />
           </Routes>
           {/* YOUR CODE HERE! */}
           {/* <Navbar />
