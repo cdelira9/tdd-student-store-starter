@@ -12,6 +12,9 @@ export default function Sidebar() {
   }
   return (
     <section className="sidebar">
+      <div id="arrow">
+        <img src="" />
+      </div>
       <p>Sidebar</p>
     </section>
   );

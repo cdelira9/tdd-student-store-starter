@@ -3,9 +3,7 @@ import { Link } from "react-router-dom";
 import "./ProductCard.css";
 
 export default function ProductCard({ product, productId }) {
-
-
-  console.log("product access inside product card: ", product)
+  console.log("product access inside product card: ", product);
   return (
     <div className="product-card">
       <div className="info">

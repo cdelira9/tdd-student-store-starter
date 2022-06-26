@@ -1,3 +1,23 @@
 .hero {
-  background-color: lightgreen;
+  background-color: rgb(0, 195, 133);
+}
+
+h1 {
+  white-space: pre;
+  color: white;
+  font-size: 40px;
+  font-weight: 60px;
+  display: block;
+}
+
+.hero img {
+  height: 120px;
+  width: 120px;
+}
+
+.hero p {
+  color: white;
+  font-size: 20px;
+  font-weight: 400px;
+  margin-top: 10px;
 }
