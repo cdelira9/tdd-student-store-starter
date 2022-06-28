@@ -10,8 +10,53 @@ export default function Home(props) {
   return (
     <div className="home">
       <Hero />
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"></link>
+      <nav class = "sub-navbar">
+        <div class="content">
+          <div class="row">
+            <div class="search-bar">
+              <input type="text" name="search" placeholder="Search" value/>
+              <i class="material-icons">search</i>
+            </div>
+            <div class="links">
+              <span class="help">
+                <i class="material-icons">help</i>
+                "Help"
+              </span>
+              <div class="cart">
+                <a href="/">
+                  "My Cart"
+                  <i class="material-icons">shopping_cart</i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="hamburger-menu">
+              <i class="material=icons">menu</i>
+            </div>
+            <ul class="category-menu open">
+              <li class="is-active">
+                <button>All Categories</button>
+              </li>
+              <li class>
+                <button>Clothing</button>
+              </li>
+              <li class>
+                <button>Food</button>
+              </li>
+              <li class>
+                <button>Accessories</button>
+              </li>
+              <li class>
+                <button>Tech</button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
       <ProductGrid products={props.products} />
-      <div className="about">
+      <div className="about" id="About">
         <div class="content">
           <h3>About</h3>
           <div class="summary">
@@ -31,11 +76,11 @@ export default function Home(props) {
               </p>
             </div>
             <div class="media">
-              <img src="	https://codepath-student-store-demo.surge.sh/assets/giant_codepath.6952ef57.svg"></img>
+              <img src="https://codepath-student-store-demo.surge.sh/assets/giant_codepath.6952ef57.svg"></img>
             </div>
           </div>
         </div>
-        <div class="Contact">
+        <div class="Contact" id="Contact">
           <div class="content">
             <h3>Contact Us</h3>
             <div class="summary">

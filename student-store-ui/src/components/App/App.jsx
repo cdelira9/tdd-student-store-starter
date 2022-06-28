@@ -15,6 +15,8 @@ export default function App() {
   const [isOpen, setIsOpen] = useState(false);
   const [products, setProducts] = useState([]);
   const [ShoppingCart, setShoppingCart] = useState([]);
+  const [shoppingCartPrice, setShoppingCartPrice] = useState(0);
+  const [checkoutForm, setCheckoutForm] = useState({ name: "", email: "" });
   useEffect(() => {
     async function getProducts() {
       try {
@@ -44,6 +46,7 @@ export default function App() {
           handleOnToggle={handleOnToggle}
           isOpen={isOpen}
           products={products}
+          ShoppingCart={ShoppingCart}
         />
         <main>
           <Routes>
