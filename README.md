@@ -4,17 +4,17 @@
 
 Selling merchandise in the modern era requires digital solutions. For this project, you'll be tasked with designing and constructing an online student store for the College of Codepath. The application entails a frontend user interface for potential customers to peruse the goods, and a backend API to handle data management. The API will be built with Node and Express and the UI will be built with React.
 
-// Include your gif here
+(https://drive.google.com/file/d/1qL7ENxOOgJE2o3_Xx-QpG4u22As2qSvN/view?usp=sharing)
 
 ### Application Features
 
 #### Core Features
 
-- [ ] Displays the following sections: header, banner, search, product grid, about, contact, and footer.
-- [ ] On initial page load, display the products at the [GET /store endpoint](https://codepath-store-api.herokuapp.com/store).
+- [X] Displays the following sections: header, banner, search, product grid, about, contact, and footer.
+- [X] On initial page load, display the products at the [GET /store endpoint](https://codepath-store-api.herokuapp.com/store).
 - [ ] User can click on the categories (Clothing, food, etc) to filter the product grid by type.
 - [ ] User can search for products.
-- [ ] User can click on a product in the grid to view additional product details. Navigation is via a React Router.
+- [X] User can click on a product in the grid to view additional product details. Navigation is via a React Router.
 - [ ] User can click to expand the shopping cart in the left navigation.
 - [ ] User can click the '+' button on a product cart to increment that product in the shopping cart.
 - [ ] User can click the '-' button on a product cart to increment that product in the shopping cart.
@@ -23,7 +23,7 @@ Selling merchandise in the modern era requires digital solutions. For this proje
 
 #### Stretch Features
 
-- [ ] User can click in the top navigation bar to scroll to the relevant section.
+- [X] User can click in the top navigation bar to scroll to the relevant section.
 - [ ] User sees a "not found" display when searching for a nonexistent product.
 - [ ] Create an endpoint for fetching all orders in the database, and an endpoint for serving an individual order based on its id.
 - [ ] Build a page in the UI that displays the list of all past orders and lets the user click on any individual order to take them to a more detailed page of the transaction.
@@ -285,15 +285,15 @@ The following specifications were met on the Express backend and the React front
 
 * Did the topics discussed in your labs prepare you to complete the assignment? Be specific, which features in your weekly assignment did you feel unprepared to complete?
 
-Add your response here
+I felt unprepared for this project as it was my first time working with this material and with react. One aspect of the project that I had difficulty was I was able tog et more comfotable with fetching the data from the API yet I had difficulty often printing out the data specifically specific parts of the API for instance the product detail file where it took me time to learn how to get the specific card. Another part of the project was that I found it easy to get lost in the project as it was importing an dexporting different files to other files which I found it difficult as I often mistakes where I mispelled variable names. In addition to this the shopping cart I continue to get the error where it is not defined and I think this error is because I am not exporting correctly to the correct file and it getting lsot somewhere when it goes from app to the product card and view. 
 
 * If you had more time, what would you have done differently? Would you have added additional features? Changed the way your project responded to a particular event, etc.
   
-Add your response here
+If I had more time I would get my shopping cart to work and figure out the error since my function for handleAddItemToCart seems to work but I am unable to call it when the button is clicked. In addition to this I would like to add a search and I think this can be accomplished by fitlering the data from the api and limiting what the grid prints out. 
 
 * Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you would like to try next time?
 
-Add your response here
+Thorughout working on this projects, there were a lot of aspects of the project that went wrong due to simple bugs and grammar and lines that only led to confusion due to me often me naming the variable names difficult names that only led to confusing myself. I think I need to work on making sure that my lines of codes stay minimal and create names that are not confusing. In addition I started using props which helped me in not having to rewrite all the variable names after each import and export which I think could of have avoid my confusion at times.
 
 ### Open-source libraries used
 
@@ -302,3 +302,5 @@ Add your response here
 ### Shout out
 
 Give a shout out to somebody from your cohort that especially helped you during your project. This can be a fellow peer, instructor, TA, mentor, etc.
+
+I would like to give a shout out to Abdul for helping me debug one of my errors when the product detail would pop up but dissapear once the page was reloaded. It was a very difficult debug as it was confusing to know why loading the page was a problem but thankfully the problem was fixed and no longer an issue in the code.
