@@ -46,8 +46,6 @@ export default function ProductDetail({ shoppingCart }) {
 
   return (
     <div className="productdetail">
-      <Navbar />
-      <Sidebar />
       <div className="box">{element}</div>
       {/* <ProductView product={product} productId={productId} /> */}
     </div>

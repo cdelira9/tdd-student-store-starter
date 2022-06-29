@@ -10,12 +10,15 @@ export default function Home(props) {
   return (
     <div className="home">
       <Hero />
-      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"></link>
-      <nav class = "sub-navbar">
+      <link
+        href="https://fonts.googleapis.com/icon?family=Material+Icons"
+        rel="stylesheet"
+      ></link>
+      <nav class="sub-navbar">
         <div class="content">
           <div class="row">
             <div class="search-bar">
-              <input type="text" name="search" placeholder="Search" value/>
+              <input type="text" name="search" placeholder="Search" value />
               <i class="material-icons">search</i>
             </div>
             <div class="links">
@@ -55,7 +58,12 @@ export default function Home(props) {
           </div>
         </div>
       </nav>
-      <ProductGrid products={props.products} />
+      <ProductGrid
+        products={props.products}
+        handleAddItemToCart={props.handleAddItemToCart}
+        handleRemoveItemFromCart = {props.handleRemoveItemFromCart}
+        shoppingCart = {props.ShoppingCart}
+      />
       <div className="about" id="About">
         <div class="content">
           <h3>About</h3>
