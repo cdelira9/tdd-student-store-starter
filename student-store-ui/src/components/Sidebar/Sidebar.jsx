@@ -44,6 +44,7 @@ export default function Sidebar({
         subtotal = {subtotal}
         cartSize = {cartSize}
         />
+        <CheckoutForm/>
       </section>
     </section>
   );

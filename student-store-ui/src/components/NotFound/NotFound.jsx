@@ -1,11 +1,11 @@
 import * as React from "react";
+import Navbar from "../Navbar/Navbar";
+import Sidebar from "../Sidebar/Sidebar";
 import "./NotFound.css";
 
 export default function NotFound() {
   return (
     <div className="notfound">
-      <Navbar />
-      <Sidebar />
       <p>Not Found</p>
     </div>
   );

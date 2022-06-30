@@ -31,14 +31,14 @@ export default function ProductDetail({ shoppingCart }) {
   useEffect(async () => {
     console.log("UserId got from params: ", productId);
 
-    const url = `https://codepath-store-api.herokuapp.com/store/`;
+    const url = "https://codepath-store-api.herokuapp.com/store";
 
     const apiURL = url + productId;
 
     try {
       const response = await axios.get(apiURL);
-      console.log("Product returned second api call", response.data.product);
-      setProduct(response.data.product);
+      console.log("Product returned second api call", response.data);
+      setProduct(response.data);
     } catch (error) {
       console.log(error);
     }

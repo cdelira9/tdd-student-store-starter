@@ -21,19 +21,16 @@ export default function App() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    async function getProducts() {
+    const getProducts = async () => {
       try {
-        const response = await axios.get(
-          "https://codepath-store-api.herokuapp.com/store"
-        );
-        console.log("response", response);
-        setProducts(response.data.products);
+        const response = await axios.get("http://localhost:3001/store");
+        console.log("response", response.data);
+        setProducts(response.data);
       } catch (error) {
+        console.log("in error log");
         console.log(error);
       }
-
-      console.log(products);
-    }
+    };
     getProducts();
   }, []);
 
@@ -92,9 +89,19 @@ export default function App() {
         />
         <main>
           <Routes>
-            <Route path="/" element={<Home products={products} />} />
             <Route
-              path="/products/:productId"
+              path="/"
+              element={
+                <Home
+                  products={products}
+                  // handleAddItemToCart={handleAddItemToCart}
+                  // handleRemoveItemFromCart={handleRemoveItemFromCart}
+                  // ShoppingCart={ShoppingCart}
+                />
+              }
+            />
+            <Route
+              path="/product/:productId"
               element={
                 <ProductDetail
                   handleAddItemToCart={handleAddItemToCart}

@@ -6,7 +6,7 @@ export default function Navbar() {
   return (
     <nav className="navbar">
       <div className="contents">
-        <div class="logo">
+        <div className="logo">
           <a href="/">
             <img
               src="	https://codepath-student-store-demo.surge.sh/assets/codepath.f1b3e41a.svg"
