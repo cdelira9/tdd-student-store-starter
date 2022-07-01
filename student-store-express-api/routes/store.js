@@ -7,7 +7,7 @@ router.get("/", async (req, res, next) => {
   res.status(200).send(products);
 });
 
-router.get("/:productId", async (req, res, next) => {
+router.get("/:productId", async (req, res) => {
   const productId = req.params.productId;
   console.log("hello");
   const product = await Store.productById(productId);

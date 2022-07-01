@@ -14,7 +14,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 export default function App() {
   const [isOpen, setIsOpen] = useState(null);
   const [products, setProducts] = useState([]);
-  const [ShoppingCart, setShoppingCart] = useState([]);
+  const [shoppingCart, setShoppingCart] = useState([]);
   const [subtotal, setSubtotal] = useState(0);
   const [checkoutForm, setCheckoutForm] = useState({ name: "", email: "" });
   const [isFetching, setIsFetching] = useState(null);
@@ -46,10 +46,10 @@ export default function App() {
     var newItem;
     var newCart = [];
 
-    for (var i = 0; i < ShoppingCart.length; i++) {
-      if (ShoppingCart[i].itemId === productId) {
-        ShoppingCart[i].quantity++;
-        setShoppingCart([...ShoppingCart]);
+    for (var i = 0; i < shoppingCart.length; i++) {
+      if (shoppingCart[i].itemId === productId) {
+        shoppingCart[i].quantity++;
+        setShoppingCart([...shoppingCart]);
         var tempPrice =
           products.find((item) => item.id === productId).price + subtotal;
         setSubtotal(tempPrice);
@@ -57,13 +57,40 @@ export default function App() {
         return;
       }
     }
-    setShoppingCart([newItem, ...ShoppingCart]);
+    newItem = {
+      itemId: productId,
+      quantity: 1,
+    };
+    setShoppingCart([newItem, ...shoppingCart]);
     var tempPrice =
       products.find((item) => item.id === productId).price + subtotal;
     setSubtotal(tempPrice);
   };
 
-  const handleRemoveItemFromCart = (productId) => {};
+  const handleRemoveItemFromCart = (productId) => {
+    var newItem;
+    var newCart = [];
+
+    for (var i = 0; i < shoppingCart.length; i++) {
+      if (shoppingCart[i].itemId === productId) {
+        if (shoppingCart[i].quantity != 1) {
+          shoppingCart[i].quantity--;
+          setShoppingCart([...shoppingCart]);
+          var tempPrice =
+            subtotal - products.find((item) => item.id === productId).price;
+          setSubtotal(tempPrice);
+          return;
+        } else {
+          shoppingCart.splice(i, 1);
+          setShoppingCart([...shoppingCart]);
+          var tempPrice =
+            subtotal - products.find((item) => item.id === productId).price;
+          setSubtotal(tempPrice);
+          return;
+        }
+      }
+    }
+  };
 
   const handleOnCheckoutFormChange = (name, value) => {};
   const handleOnSubmitCheckoutForm = () => {};
@@ -76,7 +103,7 @@ export default function App() {
           handleOnToggle={handleOnToggle}
           isOpen={isOpen}
           products={products}
-          ShoppingCart={ShoppingCart}
+          ShoppingCart={shoppingCart}
           handleOnCheckoutFormChange={handleOnCheckoutFormChange}
           handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm}
           handleAddItemToCart={handleAddItemToCart}
@@ -84,7 +111,7 @@ export default function App() {
           checkoutForm={checkoutForm}
           setShoppingCart={setShoppingCart}
           subtotal={subtotal}
-          cartSize={ShoppingCart.length}
+          cartSize={shoppingCart.length}
           setSubtotal={setSubtotal}
         />
         <main>
@@ -93,10 +120,19 @@ export default function App() {
               path="/"
               element={
                 <Home
+                  handleOnToggle={handleOnToggle}
+                  handleOnCheckoutFormChange={handleOnCheckoutFormChange}
+                  handleOnSubmitCheckoutForm={handleOnCheckoutFormChange}
                   products={products}
                   handleAddItemToCart={handleAddItemToCart}
                   handleRemoveItemFromCart={handleRemoveItemFromCart}
-                  ShoppingCart={ShoppingCart}
+                  shoppingCart={shoppingCart}
+                  isOpen={isOpen}
+                  checkoutForm={checkoutForm}
+                  setShoppingCart={setShoppingCart}
+                  subtotal={subtotal}
+                  cartSize={shoppingCart.length}
+                  setSubtotal={setSubtotal}
                 />
               }
             />
@@ -106,7 +142,7 @@ export default function App() {
                 <ProductDetail
                   handleAddItemToCart={handleAddItemToCart}
                   handleRemoveItemFromCart={handleRemoveItemFromCart}
-                  ShoppingCart={ShoppingCart}
+                  ShoppingCart={shoppingCart}
                   isOpen={isOpen}
                   products={products}
                   handleOnCheckoutFormChange={handleOnCheckoutFormChange}
@@ -114,6 +150,7 @@ export default function App() {
                   handleOnToggle={handleOnToggle}
                   checkoutForm={checkoutForm}
                   subtotal={subtotal}
+                  cartSize={shoppingCart.length}
                 />
               }
             />

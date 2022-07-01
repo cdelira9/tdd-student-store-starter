@@ -7,6 +7,14 @@ import "./Home.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 export default function Home(props) {
+  const handleOnTextChange = (event) => {
+    setSearchText(event.target.value);
+  };
+
+  const handleReset = () => {
+    props.setShoppingCart([]);
+    props.setSubtotal(0);
+  };
   return (
     <div className="home">
       <Hero />
@@ -61,8 +69,8 @@ export default function Home(props) {
       <ProductGrid
         products={props.products}
         handleAddItemToCart={props.handleAddItemToCart}
-        handleRemoveItemFromCart = {props.handleRemoveItemFromCart}
-        shoppingCart = {props.ShoppingCart}
+        handleRemoveItemFromCart={props.handleRemoveItemFromCart}
+        shoppingCart={props.shoppingCart}
       />
       <div className="about" id="About">
         <div class="content">

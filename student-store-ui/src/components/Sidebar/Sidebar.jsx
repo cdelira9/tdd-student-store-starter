@@ -37,14 +37,14 @@ export default function Sidebar({
             <i className="material-icons md-48">fact_check</i>
           </div>
         </div>
-        <ShoppingCart 
-        isOpen = {isOpen}
-        shoppingCart = {shoppingCart}
-        products = {products}
-        subtotal = {subtotal}
-        cartSize = {cartSize}
+        <ShoppingCart
+          isOpen={isOpen}
+          shoppingCart={shoppingCart}
+          products={products}
+          subtotal={subtotal}
+          cartSize={cartSize}
         />
-        <CheckoutForm/>
+        <CheckoutForm />
       </section>
     </section>
   );
