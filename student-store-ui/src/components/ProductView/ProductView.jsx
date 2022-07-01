@@ -7,7 +7,7 @@ export default function ProductView(props) {
   return (
     <div className="view">
       <ProductCard
-        // showDescription={true}
+        showDescription={true}
         product={props.product}
         productId={props.productId}
       />

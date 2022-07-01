@@ -22,7 +22,7 @@ export default function ProductDetail({ shoppingCart }) {
   console.log("Product empty? ", isLoading);
 
   const element = isLoading ? (
-    "Loading.."
+    "Loading..."
   ) : (
     <ProductView product={product} productId={2} />
   );
@@ -31,14 +31,14 @@ export default function ProductDetail({ shoppingCart }) {
   useEffect(async () => {
     console.log("UserId got from params: ", productId);
 
-    const url = "https://codepath-store-api.herokuapp.com/store";
+    const url = "https://codepath-store-api.herokuapp.com/store/";
 
     const apiURL = url + productId;
 
     try {
       const response = await axios.get(apiURL);
-      console.log("Product returned second api call", response.data);
-      setProduct(response.data);
+      console.log("Product returned second api call", response.data.products);
+      setProduct(response.data.products);
     } catch (error) {
       console.log(error);
     }

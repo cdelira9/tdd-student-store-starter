@@ -11,7 +11,7 @@ router.get("/:productId", async (req, res, next) => {
   const productId = req.params.productId;
   console.log("hello");
   const product = await Store.productById(productId);
-  res.status(200).json({ product });
+  res.status(200).send(product);
   console.log({ product });
 });
 

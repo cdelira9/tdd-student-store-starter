@@ -94,14 +94,14 @@ export default function App() {
               element={
                 <Home
                   products={products}
-                  // handleAddItemToCart={handleAddItemToCart}
-                  // handleRemoveItemFromCart={handleRemoveItemFromCart}
-                  // ShoppingCart={ShoppingCart}
+                  handleAddItemToCart={handleAddItemToCart}
+                  handleRemoveItemFromCart={handleRemoveItemFromCart}
+                  ShoppingCart={ShoppingCart}
                 />
               }
             />
             <Route
-              path="/product/:productId"
+              path="/products/:productId"
               element={
                 <ProductDetail
                   handleAddItemToCart={handleAddItemToCart}
@@ -117,7 +117,7 @@ export default function App() {
                 />
               }
             />
-            <Route path="*" element={<NotFound />} />
+            <Route path="/*" element={<NotFound />} />
           </Routes>
           {/* YOUR CODE HERE! */}
           {/* <Navbar />

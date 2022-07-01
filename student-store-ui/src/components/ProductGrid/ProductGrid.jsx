@@ -9,7 +9,13 @@ export default function ProductGrid(props) {
     <div className="product-grid">
       {props.products.map((product, idx) => {
         console.log("test map function");
-        return <ProductCard product={product} productId={product.id} />;
+        return (
+          <ProductCard
+            product={product}
+            productId={product.id}
+            handleAddItemToCart={props.handleAddItemToCart}
+          />
+        );
       })}
     </div>
   );

@@ -60,9 +60,9 @@ export default function Home(props) {
       </nav>
       <ProductGrid
         products={props.products}
-        // handleAddItemToCart={props.handleAddItemToCart}
-        // handleRemoveItemFromCart = {props.handleRemoveItemFromCart}
-        // shoppingCart = {props.ShoppingCart}
+        handleAddItemToCart={props.handleAddItemToCart}
+        handleRemoveItemFromCart = {props.handleRemoveItemFromCart}
+        shoppingCart = {props.ShoppingCart}
       />
       <div className="about" id="About">
         <div class="content">

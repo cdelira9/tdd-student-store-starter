@@ -7,7 +7,7 @@ class Store {
   }
 
   static async productById(productId) {
-    const product = storage
+    const product = storage.storage
       .get("products")
       .find({ id: Number(productId) })
       .value();
