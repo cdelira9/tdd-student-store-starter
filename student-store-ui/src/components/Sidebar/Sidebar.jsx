@@ -4,47 +4,49 @@ import ShoppingCart from "../ShoppingCart/ShoppingCart";
 import "./Sidebar.css";
 import { useState } from "react";
 
-export default function Sidebar({
-  handleOnToggle,
-  isOpen,
-  products,
-  shoppingCart,
-  handleOnCheckoutFormChange,
-  handleOnSubmitCheckoutForm,
-  handleAddItemToCart,
-  handleRemoveItemToCart,
-  checkoutForm,
-  setShoppingCart,
-  subtotal,
-  cartSize,
-  setSubtotal,
-}) {
-  const arrow = isOpen ? "←" : "→";
+export default function Sidebar(props) {
+  const arrow = props.isOpen ? "←" : "→";
   return (
     <section className="sidebar">
-      <section className="sidenav" style={{ width: isOpen ? "600px" : "50px" }}>
+      <section
+        className="sidenav"
+        style={{ width: props.isOpen ? "600px" : "50px" }}
+      >
         <div className="allitems">
-          <div className={isOpen ? "←" : "→"} onClick={handleOnToggle}>
+          <div className={props.isOpen ? "←" : "→"} onClick={props.handleOnToggle}>
             <i class="material-icons md-48">{arrow}</i>
           </div>
-          <div className={isOpen ? "closedIcon open" : "closedIcon closed"}>
+          <div
+            className={props.isOpen ? "closedIcon open" : "closedIcon closed"}
+          >
             <i className="material-icons md-48">add_shopping_cart</i>
           </div>
-          <div className={isOpen ? "closedIcon open" : "closedIcon closed"}>
+          <div
+            className={props.isOpen ? "closedIcon open" : "closedIcon closed"}
+          >
             <i className="material-icons md-48">monetization_on</i>
           </div>
-          <div className={isOpen ? "closedIcon open" : "closedIcon closed"}>
+          <div
+            className={props.isOpen ? "closedIcon open" : "closedIcon closed"}
+          >
             <i className="material-icons md-48">fact_check</i>
           </div>
         </div>
         <ShoppingCart
-          isOpen={isOpen}
-          shoppingCart={shoppingCart}
-          products={products}
-          subtotal={subtotal}
-          cartSize={cartSize}
+          isOpen={props.isOpen}
+          shoppingCart={props.shoppingCart}
+          products={props.products}
+          subtotal={props.subtotal}
+          cartSize={props.cartSize}
         />
-        <CheckoutForm />
+        <CheckoutForm
+          handleOnSubmitCheckoutForm={props.handleOnSubmitCheckoutForm}
+          handleOnCheckoutFormChange={props.handleOnCheckoutFormChange}
+          isOpen={props.isOpen}
+          shoppingCart={props.shoppingCart}
+          checkoutForm={props.checkoutForm}
+          setShoppingCart={props.setShoppingCart}
+        />
       </section>
     </section>
   );

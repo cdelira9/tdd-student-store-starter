@@ -13,6 +13,7 @@ export default function ShoppingCart({
 
   var taxes = subprice * 0.09;
   var totPrice = subprice + taxes;
+  console.log("shopping:", { shoppingCart });
 
   if (cartSize === 0) {
     return (

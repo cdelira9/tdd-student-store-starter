@@ -13,6 +13,20 @@ class Store {
       .value();
     return product;
   }
+
+  static async purchaseOrder(cart, user) {
+    var order = {
+      id: this.createId(),
+      name: user.name,
+      email: user.email,
+      order: cart,
+    };
+
+    let currentPurchases = storage.get("purchases");
+    currentPurchases.push(order).write();
+
+    return order;
+  }
 }
 
 module.exports = Store;

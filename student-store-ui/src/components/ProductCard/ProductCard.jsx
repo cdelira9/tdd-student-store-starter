@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import "./ProductCard.css";
 import ShoppingCart from "../ShoppingCart/ShoppingCart";
 
+
 export default function ProductCard(props) {
   return (
     <div className="product-card">

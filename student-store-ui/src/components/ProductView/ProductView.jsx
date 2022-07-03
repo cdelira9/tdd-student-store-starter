@@ -7,9 +7,14 @@ export default function ProductView(props) {
   return (
     <div className="view">
       <ProductCard
-        showDescription={true}
+        quantity={props.quantity}
+        productId={props.product.id}
         product={props.product}
-        productId={props.productId}
+        shoppingCart={props.shoppingCart}
+        handleAddItemToCart={props.handleAddItemToCart}
+        handleRemoveItemFromCart={props.handleRemoveItemFromCart}
+        showDescription={true}
+        key={props.productId}
       />
     </div>
   );

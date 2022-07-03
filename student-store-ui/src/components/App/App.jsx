@@ -17,9 +17,6 @@ export default function App() {
   const [shoppingCart, setShoppingCart] = useState([]);
   const [subtotal, setSubtotal] = useState(0);
   const [checkoutForm, setCheckoutForm] = useState({ name: "", email: "" });
-  const [isFetching, setIsFetching] = useState(null);
-  const [error, setError] = useState(null);
-
   useEffect(() => {
     const getProducts = async () => {
       try {
@@ -114,6 +111,7 @@ export default function App() {
           cartSize={shoppingCart.length}
           setSubtotal={setSubtotal}
         />
+        <Hero />
         <main>
           <Routes>
             <Route

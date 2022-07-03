@@ -7,17 +7,8 @@ import "./Home.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 export default function Home(props) {
-  const handleOnTextChange = (event) => {
-    setSearchText(event.target.value);
-  };
-
-  const handleReset = () => {
-    props.setShoppingCart([]);
-    props.setSubtotal(0);
-  };
   return (
     <div className="home">
-      <Hero />
       <link
         href="https://fonts.googleapis.com/icon?family=Material+Icons"
         rel="stylesheet"
@@ -26,7 +17,7 @@ export default function Home(props) {
         <div class="content">
           <div class="row">
             <div class="search-bar">
-              <input type="text" name="search" placeholder="Search" value />
+              <input type="text" name="search" placeholder="Search" />
               <i class="material-icons">search</i>
             </div>
             <div class="links">
