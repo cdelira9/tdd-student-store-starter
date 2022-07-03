@@ -100,7 +100,7 @@ export default function App() {
           handleOnToggle={handleOnToggle}
           isOpen={isOpen}
           products={products}
-          ShoppingCart={shoppingCart}
+          shoppingCart={shoppingCart}
           handleOnCheckoutFormChange={handleOnCheckoutFormChange}
           handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm}
           handleAddItemToCart={handleAddItemToCart}
